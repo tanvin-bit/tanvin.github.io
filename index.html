@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanvin Waseef - Video Editor & Creative Professional</title>
+    <meta name="description" content="Passionate Video Editor, Image Editor & Prompt Engineer. Transforming ideas into compelling visual content since 2020. Based in Dhaka, Bangladesh.">
+    <meta name="keywords" content="video editing, image editing, AI prompting, creative content, Premiere Pro, After Effects, Bangladesh">
+    <meta name="author" content="Tanvin Waseef">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tanvin Waseef - Video Editor & Creative Professional">
+    <meta property="og:description" content="Passionate Video Editor, Image Editor & Prompt Engineer. Transforming ideas into compelling visual content since 2020.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tanvinwaseef.github.io">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tanvin Waseef - Video Editor & Creative Professional">
+    <meta name="twitter:description" content="Passionate Video Editor, Image Editor & Prompt Engineer. Transforming ideas into compelling visual content since 2020.">
+    <meta name="twitter:creator" content="@tha_introvert_bro">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-inter bg-gray-900 text-white overflow-x-hidden">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 flex items-center justify-center z-50">
+        <div class="text-center">
+            <div class="loading-spinner w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full mx-auto mb-4"></div>
+            <p class="text-white text-lg font-medium opacity-0 loading-text">Loading Portfolio...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 bg-gray-900/90 backdrop-blur-md border-b border-purple-500/20 transform -translate-y-full">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Tanvin Waseef
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div class="hidden md:flex space-x-8">
+                        <button onclick="scrollToSection('home')" class="nav-link text-gray-300 hover:text-purple-400 font-medium transition-colors duration-300">Home</button>
+                        <button onclick="scrollToSection('about')" class="nav-link text-gray-300 hover:text-purple-400 font-medium transition-colors duration-300">About</button>
+                        <button onclick="scrollToSection('projects')" class="nav-link text-gray-300 hover:text-purple-400 font-medium transition-colors duration-300">Projects</button>
+                        <button onclick="scrollToSection('skills')" class="nav-link text-gray-300 hover:text-purple-400 font-medium transition-colors duration-300">Skills</button>
+                        <button onclick="scrollToSection('contact')" class="nav-link text-gray-300 hover:text-purple-400 font-medium transition-colors duration-300">Contact</button>
+                    </div>
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="relative p-2 rounded-full bg-gray-800 hover:bg-gray-700 text-yellow-400 transition-all duration-300">
+                        <i data-lucide="moon" class="h-5 w-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-gray-900 to-pink-900/20"></div>
+        <div class="stars-container absolute inset-0"></div>
+
+        <div class="container mx-auto px-4 text-center relative z-10 hero-content">
+            <div class="mb-8 opacity-0 hero-text">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                    Tanvin Waseef
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-2">
+                    Passionate Video Editor, Image Editor & Prompt Engineer
+                </p>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    Transforming ideas into compelling visual content since 2020
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 opacity-0 hero-buttons">
+                <button onclick="scrollToSection('projects')" class="btn-primary bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i data-lucide="sparkles" class="inline w-5 h-5 mr-2"></i>
+                    View My Work
+                </button>
+                <button onclick="downloadCV()" class="btn-secondary bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i data-lucide="download" class="inline w-5 h-5 mr-2"></i>
+                    Download CV
+                </button>
+            </div>
+
+            <div class="cursor-pointer scroll-indicator opacity-0" onclick="scrollToSection('about')">
+                <i data-lucide="chevron-down" class="h-8 w-8 text-purple-400 mx-auto animate-bounce"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-header">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    About Me
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-8"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="about-content">
+                    <div class="card bg-gray-800/50 border border-purple-500/20 backdrop-blur-sm rounded-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <i data-lucide="map-pin" class="h-6 w-6 text-purple-400 mr-3"></i>
+                            <span class="text-gray-300">Born in 2008, Dhaka, Bangladesh</span>
+                        </div>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                            I am a passionate video editor who started my journey in 2020. Since then, I have edited several hundred videos and specialized in image redesigning and AI prompting.
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                            I learned editing from LinkedIn and YouTube, beginning with mobile apps like CapCut, KineMaster, and Alight Motion. Now I work with professional tools like Adobe Premiere Pro, After Effects, and Audacity.
+                        </p>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            My goal is to transform ideas into compelling visual content that tells stories and engages audiences.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-content">
+                    <h3 class="text-2xl font-bold mb-8 text-center text-white">My Journey</h3>
+                    <div class="space-y-6">
+                        <div class="timeline-item flex items-center space-x-4 p-4 rounded-lg bg-gray-800/30 border border-purple-500/20">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white">
+                                <i data-lucide="video" class="h-5 w-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-purple-400 font-bold">2020</div>
+                                <div class="text-gray-300">Started video editing journey</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item flex items-center space-x-4 p-4 rounded-lg bg-gray-800/30 border border-purple-500/20">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white">
+                                <i data-lucide="zap" class="h-5 w-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-purple-400 font-bold">2021</div>
+                                <div class="text-gray-300">Mastered mobile editing apps</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item flex items-center space-x-4 p-4 rounded-lg bg-gray-800/30 border border-purple-500/20">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white">
+                                <i data-lucide="star" class="h-5 w-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-purple-400 font-bold">2022</div>
+                                <div class="text-gray-300">Transitioned to professional tools</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item flex items-center space-x-4 p-4 rounded-lg bg-gray-800/30 border border-purple-500/20">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white">
+                                <i data-lucide="code" class="h-5 w-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-purple-400 font-bold">2023</div>
+                                <div class="text-gray-300">Specialized in AI prompting</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item flex items-center space-x-4 p-4 rounded-lg bg-gray-800/30 border border-purple-500/20">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white">
+                                <i data-lucide="sparkles" class="h-5 w-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-purple-400 font-bold">2024</div>
+                                <div class="text-gray-300">Hundreds of videos edited</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-header">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Featured Projects
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-8"></div>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Here are some of my best video editing and creative projects
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Project 1 -->
+                <div class="project-card group">
+                    <div class="card bg-gray-800/50 border border-purple-500/20 backdrop-blur-sm overflow-hidden transition-all duration-300 h-full flex flex-col shadow-lg hover:shadow-xl hover:border-purple-500/50">
+                        <div class="relative overflow-hidden h-64 flex-shrink-0">
+                            <img src="images/project-1.png" alt="Demo Video Showcase" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <button onclick="window.open('https://youtu.be/PEc9FbbIIhw?si=nxK-ZkZQ6O8i-MYf', '_blank')" class="bg-purple-600 hover:bg-purple-700 text-white rounded-full shadow-lg px-6 py-3 transition-all duration-300">
+                                    <i data-lucide="play" class="inline h-4 w-4 mr-2"></i>
+                                    Watch Video
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold mb-2 text-white">Demo Video Showcase</h3>
+                            <p class="text-gray-400 mb-4 flex-grow">A portfolio demo reel showcasing smooth transitions and visual editing expertise.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="badge bg-purple-600/20 text-purple-300 border border-purple-500/30 px-3 py-1 rounded-full text-sm">Premiere Pro</span>
+                                <span class="badge bg-purple-600/20 text-purple-300 border border-purple-500/30 px-3 py-1 rounded-full text-sm">After Effects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card group">
+                    <div class="card bg-gray-800/50 border border-purple-500/20 backdrop-blur-sm overflow-hidden transition-all duration-300 h-full flex flex-col shadow-lg hover:shadow-xl hover:border-purple-500/50">
+                        <div class="relative overflow-hidden h-64 flex-shrink-0">
+                            <img src="images/project-2.png" alt="Featured Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <button onclick="window.open('#', '_blank')" class="bg-purple-600 hover:bg-purple-700 text-white rounded-full shadow-lg px-6 py-3 transition-all duration-300">
+                                    <i data-lucide="external-link" class="inline h-4 w-4 mr-2"></i>
+                                    View Project
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold mb-2 text-white">Featured Design</h3>
+                            <p class="text-gray-400 mb-4 flex-grow">A minimalist visual design crafted for brand identity and digital presence.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="badge bg-purple-600/20 text-purple-300 border border-purple-500/30 px-3 py-1 rounded-full text-sm">Photoshop</span>
+                                <span class="badge bg-purple-600/20 text-purple-300 border border-purple-500/30 px-3 py-1 rounded-full text-sm">After Effects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card group">
+                    <div class="card bg-gray-800/50 border border-purple-500/20 backdrop-blur-sm overflow-hidden transition-all duration-300 h-full flex flex-col shadow-lg hover:shadow-xl hover:border-purple-500/50">
+                        <div class="relative overflow-hidden h-64 flex-shrink-0">
+                            <img src="images/project-3.png" alt="Stylish Visual Edit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <button onclick="window.open('https://youtu.be/sbfKUVtmMZE?si=dI4rK_zvTEjgpbUW', '_blank')" class="bg-purple-600 hover:bg-purple-700 text-white rounded-full shadow-lg px-6 py-3 transition-all duration-300">
+                                    <i data-lucide="play" class="inline h-4 w-4 mr-2"></i>
+                                    Watch Video
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold mb-2 text-white">Stylish Visual Edit</h3>
+                            <p class="text-gray-400 mb-4 flex-grow">A modern, upbeat video edit designed for digital platforms and social engagement.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="badge bg-purple-600/20 text-purple-300 border border-purple-500/30 px-3 py-1 rounded-full text-sm">Premiere Pro</span>
+                                <span class="badge bg-purple-600/20 text-purple-300 border border-purple-500/30 px-3 py-1 rounded-full text-sm">After Effects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card group">
+                    <div class="card bg-gray-800/50 border border-purple-500/20 backdrop-blur-sm overflow-hidden transition-all duration-300 h-full flex flex-col shadow-lg hover:shadow-xl hover:border-purple-500/50">
+                        <div class="relative overflow-hidden h-64 flex-shrink-0">
+                            <img src="images/portfolio-website.png" alt="Portfolio Website" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <button onclick="window.open(window.location.href, '_blank')" class="bg-purple-600 hover:bg-purple-700 text-white rounded-full shadow-lg px-6 py-3 transition-all duration-300">
+                                    <i data-lucide="external-link" class="inline h-4 w-4 mr-2"></i>
+                                    View Project
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold mb-2 text-white">Portfolio Website</h3>
+                            <p class="text-gray-400 mb-4 flex-grow">A modern portfolio site to showcase my professional editing, design, and branding capabilities.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="badge bg-purple-600/20 text-purple-300 border border-purple-500/30 px-3 py-1 rounded-full text-sm">HTML/CSS</span>
+                                <span class="badge bg-purple-600/20 text-purple-300 border border-purple-500/30 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                                <span class="badge bg-purple-600/20 text-purple-300 border border-purple-500/30 px-3 py-1 rounded-full text-sm">Responsive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-header">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Skills & Tools
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-8"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Video Editing -->
+                <div class="skill-category">
+                    <div class="card bg-gray-800/50 border border-purple-500/20 backdrop-blur-sm h-full p-6">
+                        <div class="flex items-center mb-6">
+                            <div class="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white mr-4">
+                                <i data-lucide="video" class="h-8 w-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Video Editing</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">Adobe Premiere Pro</span>
+                                    <span class="text-purple-400">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" data-width="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">After Effects</span>
+                                    <span class="text-purple-400">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">CapCut</span>
+                                    <span class="text-purple-400">98%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" data-width="98"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">KineMaster</span>
+                                    <span class="text-purple-400">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" data-width="95"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audio Editing -->
+                <div class="skill-category">
+                    <div class="card bg-gray-800/50 border border-purple-500/20 backdrop-blur-sm h-full p-6">
+                        <div class="flex items-center mb-6">
+                            <div class="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white mr-4">
+                                <i data-lucide="zap" class="h-8 w-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Audio Editing</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">Audacity</span>
+                                    <span class="text-purple-400">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">Audio Sync</span>
+                                    <span class="text-purple-400">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">Sound Design</span>
+                                    <span class="text-purple-400">80%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" data-width="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">Voice Enhancement</span>
+                                    <span class="text-purple-400">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" data-width="85"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creative Tools -->
+                <div class="skill-category">
+                    <div class="card bg-gray-800/50 border border-purple-500/20 backdrop-blur-sm h-full p-6">
+                        <div class="flex items-center mb-6">
+                            <div class="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white mr-4">
+                                <i data-lucide="image" class="h-8 w-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Creative Tools</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">AI Prompting</span>
+                                    <span class="text-purple-400">92%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" data-width="92"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">Image Redesign</span>
+                                    <span class="text-purple-400">88%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" data-width="88"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">Alight Motion</span>
+                                    <span class="text-purple-400">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">Color Grading</span>
+                                    <span class="text-purple-400">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" data-width="85"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 stats-container">
+                <div class="text-center stat-item">
+                    <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2 stat-number" data-target="500">0</div>
+                    <div class="text-gray-400">Videos Edited</div>
+                </div>
+                <div class="text-center stat-item">
+                    <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2 stat-number" data-target="15">0</div>
+                    <div class="text-gray-400">Tools Mastered</div>
+                </div>
+                <div class="text-center stat-item">
+                    <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2 stat-number" data-target="4">0</div>
+                    <div class="text-gray-400">Years Experience</div>
+                </div>
+                <div class="text-center stat-item">
+                    <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2 stat-number" data-target="100">0</div>
+                    <div class="text-gray-400">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-header">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Get In Touch
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-8"></div>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Ready to bring your vision to life? Let's collaborate on your next project!
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3 class="text-2xl font-bold mb-8 text-white">Contact Information</h3>
+                    <div class="space-y-6">
+                        <a href="mailto:tanvinwaseef15@gmail.com" class="contact-item flex items-center space-x-4 p-4 rounded-lg bg-gray-800/50 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 group">
+                            <div class="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="mail" class="h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-gray-400 text-sm">Email</div>
+                                <div class="text-white font-medium">tanvinwaseef15@gmail.com</div>
+                            </div>
+                        </a>
+                        <a href="tel:+8801960405887" class="contact-item flex items-center space-x-4 p-4 rounded-lg bg-gray-800/50 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 group">
+                            <div class="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="phone" class="h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-gray-400 text-sm">Phone</div>
+                                <div class="text-white font-medium">+8801960405887</div>
+                            </div>
+                        </a>
+                        <a href="https://instagram.com/tha_introvert_bro" target="_blank" class="contact-item flex items-center space-x-4 p-4 rounded-lg bg-gray-800/50 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 group">
+                            <div class="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="instagram" class="h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-gray-400 text-sm">Instagram</div>
+                                <div class="text-white font-medium">@tha_introvert_bro</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <div class="card bg-gray-800/50 border border-purple-500/20 backdrop-blur-sm p-8">
+                        <h3 class="text-2xl font-bold mb-6 text-white">Send a Message</h3>
+                        <form id="contact-form" action="https://formspree.io/f/mvgqgjer" method="POST" class="space-y-6">
+                            <div>
+                                <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 text-white placeholder-gray-400 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all duration-300">
+                            </div>
+                            <div>
+                                <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 text-white placeholder-gray-400 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all duration-300">
+                            </div>
+                            <div>
+                                <textarea name="message" placeholder="Your Message" required rows="5" class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 text-white placeholder-gray-400 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none resize-none transition-all duration-300"></textarea>
+                            </div>
+                            <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                <i data-lucide="mail" class="inline w-5 h-5 mr-2"></i>
+                                <span id="submit-text">Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-900 border-t border-purple-500/20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
+                        Tanvin Waseef
+                    </div>
+                    <p class="text-gray-400">© 2025 Tanvin Waseef. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <button onclick="scrollToSection('home')" class="text-gray-400 hover:text-purple-400 transition-colors duration-300">Home</button>
+                    <button onclick="scrollToSection('about')" class="text-gray-400 hover:text-purple-400 transition-colors duration-300">About</button>
+                    <button onclick="scrollToSection('projects')" class="text-gray-400 hover:text-purple-400 transition-colors duration-300">Projects</button>
+                    <button onclick="scrollToSection('contact')" class="text-gray-400 hover:text-purple-400 transition-colors duration-300">Contact</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-4 right-4 z-50 transform translate-x-full transition-transform duration-300">
+        <div class="bg-gray-800 border border-purple-500/20 rounded-lg p-4 shadow-lg max-w-sm">
+            <div class="flex items-center">
+                <div id="toast-icon" class="mr-3"></div>
+                <div>
+                    <div id="toast-title" class="text-white font-semibold"></div>
+                    <div id="toast-message" class="text-gray-300 text-sm"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
